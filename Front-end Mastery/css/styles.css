@@ -1,0 +1,562 @@
+/* References, Credits, Resources */
+
+/* https://nerdcowboy.com/blog/sliding-underlined-links/ */
+/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+/* https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/2048px-Yes_Check_Circle.svg.png */
+/* https://xd.adobe.com/spec/75d448ea-569a-4b7e-721b-9bbd3b2b97b9-03e5/flow */
+/* https://www.w3schools.com/css/css3_box-sizing.asp */
+/* https://getcssscan.com/css-box-shadow-examples */ /* Box shadow #10 was used */
+
+/* Fonts - Rubik. Ubuntu for titles & input.*/
+/* Colors - #053774 Primary, #2892d2 Accent */
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    color: #707070;
+    font-size: 18px;
+}
+
+/* Fonts */
+h1,
+h2,
+input,
+textarea {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Nav styles */
+
+header {
+    background: #f8f8f8;
+    padding: 5em 0;
+    margin-bottom: 2em;
+}
+
+.site-title h1, 
+.site-title h2 {
+    margin: 0;
+}
+
+.site-title h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #053774;
+}
+
+.site-title h2 {
+    text-transform: uppercase;
+    font-size: 0.885rem;
+    letter-spacing: 2.4px;
+    color: #2892d2;
+}
+
+.navbar {
+    letter-spacing: 1.4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 700; 
+    text-transform: uppercase;
+    gap: 2em;
+    letter-spacing: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #707070;
+}
+
+nav a:hover, nav a:focus {
+    color: black;
+}
+
+.active-page {
+    text-decoration: underline;
+    text-decoration-color: #707070;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.5em;
+}
+
+.active-page:hover {
+    color: inherit;
+}
+
+/* Home styles */
+
+.container {
+    padding: 0 1em;
+    max-width: 1200px; /* Prevent sides of content from touching the browser */
+}
+
+/* Article styles */
+
+.article-featured, .article-recent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.article-featured:has(.article-read-more) { /* Has selector specifies if an article featured has continue reading then put a border-bottom */
+    padding-bottom: 2em;
+    border-bottom: 1.5px solid #707070;
+}
+
+.article-featured-img, 
+.article-recent-secondary {
+    order: -1; /* Displays images on the top despite of HTML structure. Flexbox property.*/
+}
+
+.article-featured-img,
+.article-recent-img {
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.article-title {
+    color: #053774;
+    font-weight: 400;
+    margin: 0;
+    order: 3;
+}
+
+.article-h2 {
+    color: #2892d2;
+    font-weight: 300;
+}
+
+.article-body {
+    font-weight: 300;
+    order: 4;
+    line-height: 1.5; 
+}
+
+.link, .article-read-more {
+    color:#2892d2;
+}
+
+.link:hover, .link:focus {
+    color: #053774;
+    text-underline-offset: 0.2em;
+}
+
+.link[href^="https://"]:hover::after { /* External link attribute selector */
+    content: " ⬆️";
+}
+
+.article-read-more {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2.8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    order: 5;
+    
+    /* animation left-right */
+
+    text-decoration: none;
+    background-image: linear-gradient(to right, #053774, #2892d2); /* Sets a "background" of linear gradient */
+    background-size: 0% 0.2em; /* Background size 0% is used from left-to right to define how much is shown, 0.2em is used to define the top and bottom size of background, essentially thickness of line */
+    background-position-y: 100%; /* y position = top & bottom background position is used to say the linear gradient should be placed at the bottom when set to 100% */
+    background-position-x: 0%; /* x positon = left & right background position. Used to define where the transition appears from. 50% would start from centre, 0% from left, 100% from right etc.*/
+    background-repeat: no-repeat; /* Prevents background from filling the whole text */
+    transition: background-size 0.4s; /* Transitions the background size over 0.4 seconds. This makes the left-right animation look smooth. */
+    width: fit-content;  /* Prevents featured article read more from going to 100% parents div */
+    padding-bottom: 0.5em; /* Give the background space on bottom so it's not touching the text */
+}
+
+.article-read-more:hover, 
+.article-read-more:focus {
+    background-size: 100% 0.2em; /* On hover increase left-right background size to 100% */
+}
+
+.article-read-more:hover::after,
+.article-read-more:focus::after {
+    content: '➡️';
+}
+
+.article-read-more[href="#"] {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.article-read-more[href="#"]:hover,
+.article-read-more[href="#"]:focus {
+    transition: none;
+    background-size: 0;
+}
+
+.article-read-more[href="#"]:hover::after,
+.article-read-more[href="#"]:focus::after {
+    content: "❌";
+}
+
+.article-date {
+    order: 2;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+/* About Me Page Styles */
+
+.about-me-title, /* Resets the values of these classes to default. This is to display the about-me page in proper order as it's using the structure of class article-featured */
+.about-me-h2, 
+.about-me-body {
+    order: initial;
+    border: none;
+    margin-bottom: initial; 
+}
+
+/* About Me Typewriter Effect */
+
+ /* Defining typing as going from width of 0 to 100% */
+ @keyframes typing-effect {
+    from { 
+        width: 0 
+    }
+    to { 
+        width: 100%; 
+    }
+  }
+  
+  /* Blinking caret as changing from display: none (hidden) to applying a border-color */
+  @keyframes blinking-caret {
+    from { 
+        display: none;
+    }
+    to {
+        border-color: #053774;
+    }
+  }
+  
+  .typewriter { 
+    width: fit-content; /* Prevents blinking caret from carrying on to 100% of parent div. */
+  }
+
+  .typewriter-kristiyan {
+    color: #053774;
+  }
+  .typewriter h2 {
+    font-weight: 400;
+    color: #2892d2;
+    overflow: hidden; /* Ensures the content is not revealed until the animation finishes */
+    border-right: .1em solid white; /* A smart way to "create" a caret */
+    white-space: nowrap; /* Prevents the text from stacking one on top of eachother*/
+    animation: /* Short hand */
+      typing-effect 3.5s steps(30), /* animation-duration: 3.5s & steps(30) is essentially setting how many frames per second. */
+      blinking-caret 1s 8; /* animation-duration: 1s means it will run the display: none to border-color sequence every 1 second. 
+      animation-iteration-count: 8, implies it will be repeated only 8 times to prevent from blinking when the animation is finished. Could also be set to "infinite" */
+  }
+.typewriter-hi-emoji::after { /* Pseudo-element with generated content */
+    content: " 👋";
+}
+
+
+/* Sidebar widget styles */
+
+.sidebar-widget-title {
+    color: #053774;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    margin-top: 0;
+}
+
+.sidebar-widget-about-me {
+    margin-bottom: 2em; /* Gives space between sidebar divs so they're not stuck together*/
+}
+
+.sidebar-widget-about-me-img {
+    object-fit: cover;
+    width: 100%;
+    transition: transform 250ms;
+}
+
+.sidebar-about-me-body {
+    text-align:center;
+}
+
+.sidebar-widget-about-me, 
+.sidebar-widget-reach-me {
+    border: 20px solid #EBEBEB;
+    padding: 1em;
+}
+
+.sidebar-widget-reach-link:not(:last-child) { /* Gives an underline to all sidebar reach links except the last one. */
+    border-bottom: 1px solid black;
+    margin-bottom: 1em;
+}
+
+.sidebar-widget-reach-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-widget-reach-img {
+    width: 100%;
+    max-width: 200px;
+    transition: transform 250ms;
+}
+
+.sidebar-widget-reach-img:hover, 
+.sidebar-widget-reach-img:focus, 
+.sidebar-widget-about-me-img:hover, 
+.sidebar-widget-about-me-img:focus {
+    transform: scale(1.10);
+}
+
+.widget {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3%;
+    margin-bottom: 1em;
+}
+
+/* Footer styles */
+
+footer {
+    background: #053774;
+    padding: 3em;
+}
+
+.footer-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-body h3, .footer-body p  {
+    margin: 0.5rem;
+}
+
+input, textarea {
+    border: 3px solid #bababa;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    transition: transform 250ms;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 1em;
+    border: none;
+    color: white;
+    padding: 0.7em 2em; 
+    background-image: linear-gradient(to top, #053774, #2892d2);
+    transition: transform 250ms;
+}
+
+.btn-contact {
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+input, 
+.button, textarea {
+    width: 80%;
+    border-radius: 7px;
+}
+
+.button:hover, :focus,
+input:hover, :focus {
+    transform: scale(1.10);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.footer-subscribe, .footer-body {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-disclaimer {
+    font-size: 0.5rem;
+    margin: 0;
+}
+
+/* Contact styles */
+
+.contact-form {
+    border: 20px solid #EBEBEB;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-title {
+    align-self: flex-start;
+}
+
+.contact-form-button {
+    padding: 1.5em 3em;
+    margin-top: 1em;
+    width: 50%;
+}
+
+.contact-form-input, 
+.contact-form-textarea {
+    text-align: left;
+    padding: 12px 20px; /* Gives space to placeholders and text input*/
+    margin: 0;
+    box-sizing: border-box; /* To include padding and border to the total width and height. Otherwise width 100% will span over padding and border. */
+    width: 100%;
+}
+
+.contact-form-input:valid, 
+.contact-form-textarea:valid {
+    background: url(../img/checkmark_contact.svg.png);
+    background-size: 15px; /* Size of check mark*/
+    background-repeat: no-repeat; /* To show only one check mark*/
+    background-position: 2px; /* Left-right position. 2px off left border of input */
+}
+
+.contact-form-textarea:valid {
+    background-position: 2px 12px; /* Top-bottom & left-right position. */
+}
+
+form > input:nth-of-type(even), 
+textarea:nth-of-type(odd) { /* Very complicated way of setting a background to nth type elements. Done this way to satisfy coursework requirement "Child combinator" */
+    background: #EBEBEB;
+}
+
+.contact-form-input:hover, 
+.contact-form-input:focus,
+.contact-form-textarea:hover, 
+.contact-form-textarea:focus {
+    border-color: black;
+    transform: none; /* Disable scale transform */
+    box-shadow: none;
+}
+
+.contact-form-button:hover, 
+.contact-form-button:focus {
+    background-image: linear-gradient(to top, #2892d2, #053774);
+    transform: scale(1.03)
+}
+
+.contact-form-textarea {
+    resize: none;
+}
+
+/* Media queries */
+
+/* Tablet media */
+
+@media (max-width:950px) {
+   header {
+    padding: 4em 0;
+   }
+    .navbar {
+        flex-direction: column;
+    }
+    .sidebar-widget-about-me-img {
+        height: 200px;
+    }
+    .contact-form-textarea {
+        height: 250px;
+    }
+}
+
+/* Desktop media */
+
+@media (min-width: 900px) {
+    .container-flex {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    main {
+        width: 65%; /* Purposefully give less than 100% width on main and aside to leave space for justify-content: space-between; to work properly.*/
+    }
+    aside {
+        width: 30%;
+        margin-left: 1em;
+    }
+    .sidebar-widget-about-me-img {
+        height: 100px;
+    }
+    .article-recent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .article-recent-img {
+        height: 300px;
+    }
+    .article-recent-main {
+        order: 1;
+        width: 60%;
+    }
+    .article-recent-secondary {
+        width: 35%
+    }
+    .contact-form-textarea {
+        height: 492px;
+    }
+}
+
+/* Mobile media */
+ 
+@media (max-width:565px) {
+    header {
+        padding: 2em 0;
+    }
+    .site-title h1 {
+        font-size: 2rem;
+    }
+    .site-title h2 {
+        font-size: 0.5rem;
+    }
+    .navbar {
+        max-width: 400px;
+    }
+    nav ul { 
+        display: block;
+        font-size: 1rem;
+    }
+    nav li {
+        text-align: center;
+        margin: 1.5em 0;
+    }
+    .contact-form-textarea {
+        height: 150px;
+    }
+    .contact-form-button {
+        width: 100%;
+    }
+}
+
+/* Footer desktop media */
+
+@media (min-width: 600px) {
+    .footer-items {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline; /* Aligns to match the h3 and p elements starting position */
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .footer-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 150px;
+    }
+}
+

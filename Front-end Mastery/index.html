@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&family=Rubik:ital,wght@0,300%253B0,400%253B0,700%253B1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Front-end Mastery</title>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+        <div class="site-title">
+            <h1>Front-end Mastery</h1>
+            <h2>Exploring the possibilities of creativity</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active-page">Home</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <div class="container container-flex">
+    <main role="main">
+        <article class="article-featured">
+            <h2 class="article-title">Introduction to flexbox</h2>
+            <p class="article-body">Flexbox is one of the most <strong>vital</strong> tools in modern web development. It allows for easy one dimensional arrangement of various HTML elements. In fact, <a href="#" class="link">this website</a> was built with 100% flex elements.</p>
+            <img src="img/flexbox_article.png" alt="Flexbox image" class="article-featured-img">
+            <a href="#" class="article-read-more">Continue Reading</a>
+            <p class="article-date"><time datetime='2022-11-09'>November 9, 2022</time></p>
+        </article>
+
+        <article class="article-recent">
+            <div class="article-recent-main">
+            <h2 class="article-title">JavaScript or jQuery? The when and why</h2>
+            <p class="article-body">The most used web technologies to build excellent user interactive pages. Which one takes the crown when it comes to speed, functionality and use-cases?</p>
+            <a href="#" class="article-read-more">Continue Reading</a>
+        </div>
+            <div class="article-recent-secondary">
+                <img src="img/jsvsjquery_article.png" alt="" class="article-recent-img">
+                <p class="article-date"><time datetime='2022-11-08'>November 8, 2022</time></p>
+            </div>
+         </article>
+
+        <article class="article-recent">
+            <div class="article-recent-main">
+                <h2 class="article-title">Five easy projects for newbie programmers</h2>
+                <p class="article-body">Often beginner web developers find themselves frustrated with what projects to tackle. In this article, we have laid out five projects that will develop basic skills like managing a layout with flexbox & grid.</p>
+                <a href="#" class="article-read-more">Continue Reading</a>
+            </div>
+        <div class="article-recent-secondary">
+            <img src="img/beginnerprojects_article.png" alt="" class="article-recent-img">
+            <p class="article-date"><time datetime='2022-11-07'>November 7, 2022</time></p>
+        </div>
+        </article>
+
+        <article class="article-recent">
+            <div class="article-recent-main">
+            <h2 class="article-title">Is CSS here to stay?</h2>
+            <p class="article-body">With more modern styling solutions like Tailwind CSS and Bootstrap on the rise, is vanilla CSS going to be replaced soon enough?</p>
+            <a href="#" class="article-read-more">Continue Reading</a>
+        </div>
+            <div class="article-recent-secondary">
+            <img src="img/CSS_article.png" alt="" class="article-recent-img">
+            
+            <p class="article-date"><time datetime='2022-11-06'>November 6, 2022</time></p>
+        </div>
+        </article>
+
+    </main>
+
+    <aside>
+        <div class="widget">
+        <div class="sidebar-widget-about-me">
+            <h3 class="sidebar-widget-title">About Me</h3>
+            <a href="about-me.html"><img src="img/profile.jpg" alt="Kristiyan Kanchev pictured in the backlight of the sun near a river." class="sidebar-widget-about-me-img"></a>
+            <p class="sidebar-about-me-body">
+                Blue is my favorite color. Currently studying Computer Science <a href="https://twitter.com/UniWestminster" class="link">@UniWestminster</a>
+            </p>
+        </div>
+
+        <div class="sidebar-widget-reach-me">
+            <h3 class="sidebar-widget-title">Reach me at</h3>
+
+            <div class="sidebar-widget-reach-link">
+                <a href="https://www.linkedin.com/in/kristiyan-kanchev-7083a91a4/"><img src="img/linkedin_reach.png" alt="Linkedin-Logo" class="sidebar-widget-reach-img"></a>
+            </div>
+
+            <div class="sidebar-widget-reach-link">
+                <a href="https://github.com/ravagerr"><img src="img/github_reach.png" alt="GitHub-Logo" class="sidebar-widget-reach-img"></a>
+            </div>
+
+            <div class="sidebar-widget-reach-link">
+                <a href="https://www.facebook.com/datboiayylmao"><img src="img/facebook_reach.wine.svg" alt="facebook-logo" class="sidebar-widget-reach-img"></a>
+            </div>
+        </div>
+    </div>
+    </aside>
+    </div>
+    <footer>
+        <div class="footer-items">
+        <div class="footer-body">
+            <h3>Front-end Mastery</h3>
+            <a href="contact-me.html" class="button btn-contact">Contact</a>
+            <p>Kristiyan Kanchev w1855005</p>
+        </div>
+        <form action="#" class="newsletter">
+            <p class="footer-subscribe">Subscribe to the newsletter</p>
+            <input type="email" name="email" placeholder="email" required><br>
+            <button type="submit" class="button">Register</button>
+            <p class="footer-disclaimer">Your information is safe with us.</p>
+        </form>
+        </div>
+    </footer>
+</body>
+</html>
