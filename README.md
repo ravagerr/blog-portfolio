@@ -2,6 +2,10 @@
 
 A fully responsive sample blog and portfolio template, built from scratch using modern web development techniques. The base design of the website is from https://xd.adobe.com/spec/75d448ea-569a-4b7e-721b-9bbd3b2b97b9-03e5/flow
 
+View the website here: https://ravagerr.github.io/blog-portfolio/Front-end%20Mastery/index.html
+
+NOTE: The contact form is not functional. If you would like to get in touch, please do so on the other links provided.
+
 ## Features
 
 1. Google fonts ✅
